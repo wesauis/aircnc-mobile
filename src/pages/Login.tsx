@@ -18,11 +18,10 @@ export default function Login({ navigation }) {
   const [techs, setTechs] = useState<string>('');
 
   useEffect(() => {
-    AsyncStorage.getItem('aircnc.user_id')
-      .then(user => {
-        if (user) navigation.navigate('List');
-      })
-      .catch(console.error);
+    (async () => {
+      const user = await AsyncStorage.getItem('aircnc.user_id');
+      if (user) navigation.navigate('List');
+    })();
   }, []);
 
   async function handleSubmit() {
