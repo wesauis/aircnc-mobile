@@ -18,10 +18,12 @@ export default function List({ navigation }) {
   useEffect(() => {
     AsyncStorage.getItem('aircnc.techs')
       .then(savedTechs => {
-        const techsArr = savedTechs.split(',').map(tech => tech.trim());
-        setTechs(techsArr);
+        if (savedTechs) {
+          const techsArr = savedTechs.split(',').map(tech => tech.trim());
+          setTechs(techsArr);
+        }
       })
-      .catch(error => console.error);
+      .catch(console.error);
   }, []);
 
   return (
@@ -32,7 +34,7 @@ export default function List({ navigation }) {
         onLongPress={() =>
           AsyncStorage.clear()
             .then(() => navigation.navigate('Login'))
-            .catch(error => console.error)
+            .catch(console.error)
         }
       >
         <Image style={styles.logo} source={logo} />
