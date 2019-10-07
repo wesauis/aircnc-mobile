@@ -55,7 +55,7 @@ export default function Login({ navigation }) {
           autoCorrect={false}
           value={email}
           onChangeText={setEmail}
-        ></TextInput>
+        />
 
         <Text style={styles.label}>TECNOLOGIAS *</Text>
         <TextInput
@@ -66,7 +66,7 @@ export default function Login({ navigation }) {
           autoCorrect={false}
           value={techs}
           onChangeText={setTechs}
-        ></TextInput>
+        />
 
         <TouchableOpacity style={styles.button} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Encontrar spots</Text>
