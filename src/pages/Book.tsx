@@ -11,8 +11,6 @@ import {
 import Constants from 'expo-constants';
 import api from '../services/api';
 
-// TODO: add data selector
-
 export default function Book({ navigation }) {
   const spot_id = navigation.getParam('id');
   const [date, setDate] = useState<string>('');
@@ -40,6 +38,7 @@ export default function Book({ navigation }) {
     <View style={styles.container}>
       <View style={styles.statusbar}></View>
 
+      {/* @todo date selector instead of textinput */}
       <Text style={styles.label}>DATA DE INTERESSE *</Text>
       <TextInput
         style={styles.input}

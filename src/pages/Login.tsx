@@ -13,6 +13,8 @@ import {
 import logo from '../assets/logo.png';
 import api from '../services/api';
 
+// @todo we have a login! let's make a logout?
+
 export default function Login({ navigation }) {
   const [email, setEmail] = useState<string>('');
   const [techs, setTechs] = useState<string>('');
